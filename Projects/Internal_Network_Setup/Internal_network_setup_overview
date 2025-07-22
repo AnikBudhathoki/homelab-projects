@@ -1,1 +1,88 @@
+# Setting Up an Internal Network Between Two VirtualBox VMs
 
+
+
+## Objective
+I wanted to learn about the different networking types in VirutalBox. I wanted to use this knowledge then to setup my home labs such that they can communicate withe each other without exposing my host machine to
+external threats. Upon researching the different networking types I learned the following:
+
+-Not Attached
+The network adapter exists but is not attached to a network. The VM cannot send or receive any network traffic. Convenient if you want to turn off networking for the VM.
+
+-NAT (Network Address Translation)
+The default networking mode. The VM employs the host IP address and NAT to access other networks such as the internet. The VM can initiate outbound connections, but no external devices can reach the VM directly.
+
+-NAT Network
+Similar to NAT but enables several VMs in the same virtual network. VMs can communicate with each other and also share internet using NAT. Ideal for stand-alone VM clusters that need internet connectivity.
+
+-Bridged Adapter
+The VM connects to the physical network directly via the network interface of the host. The VM gets its own IP address on the LAN and appears as a unique machine to other computers. This allows full network access and visibility.
+
+-Internal Network
+Creates a stand-alone network between VMs on the same host alone. VMs can communicate with one another but not the outside or host. Ideal for isolated testing environments.
+
+-Host-only Adapter
+Creates a network through which host computer and VM(s) can communicate only. VMs cannot connect to the internet unless routing is configured manually. Useful for secure VM-host communication without exposing VMs externally.
+
+-Generic Driver
+Provides higher-level networking with custom drivers and protocols. It is an uncommon choice for use in special configurations or experimentation.
+
+
+I decided to Create an isolated **internal network** in VirtualBox to enable secure communication between two virtual machines (e.g., Windows 10 and Kali Linux) without exposing them to the host machine’s physical network
+
+## Tools Used
+- Oracle VM VirtualBox
+- Two Virtual Machines (e.g., Windows 10 and Kali Linux)
+
+## Steps
+
+1. **Open VirtualBox and Select Your VM**  
+
+2. **Configure Network Settings for Each VM**  
+   For both VMs (Windows 10 and Kali Linux):
+
+   - Right-click the VM and select settings.  
+   - Navigate to the Network tab.  
+   - Under Adapter 1** (or any free adapter):  
+     - Check **Enable Network Adapter**.  
+     - In **Attached to:** dropdown, select **Internal Network**.  
+     - Set the **Name** field to a common network name (e.g., `testnet'). You have to make sure that the same name is used when configuring the settings for both VMs
+
+3. **Start Both VMs**
+
+4. **Configure IP Addresses Inside Each VM**
+
+   ### On Windows 10 VM:
+   - Open **Network and Sharing Center** > **Change adapter settings**.  
+   - Find the adapter corresponding to the internal network.  
+   - Right-click > **Properties** > Select **Internet Protocol Version 4 (TCP/IPv4)** > **Properties**.  
+   - Set a static IP address, e.g.:  
+     - IP address: `192.168.20.10`  
+     - Subnet mask: `255.255.255.0`  
+     - Leave Default gateway blank or set as needed.
+
+   ### On Kali Linux VM:
+    - On the top bar there should be a network symbol
+    - Right click it then hit edit connections
+    - Right click wire connection 1, then hit the gear box icon
+    - Go to the IPV4 tab, then enter the static IP address. Use a differnt one from the windows one you configured while remaining in the realms of private ips
+          Ex) Use 192.168.20.11
+
+
+5. **Test Connectivity**
+
+   - From Windows VM, open Command Prompt and ping Kali Linux VM’s IP: 
+     ping 192.168.100.20
+    - From Kali Machine the windows firewall will block any ping attempts, you can run nmap instead
+
+     
+
+## Challenges & Notes
+- Both VMs must use the **exact same Internal Network name** in VirtualBox.
+- Internal networks are isolated from the host and external networks by design.
+- You can add more VMs to the same internal network by configuring their adapters with the same network name.
+
+## What I Learned
+- How to create isolated lab environments for secure testing.
+- Static IP configuration on both Windows and Linux guests.
+- Networking basics applied in virtualization.
