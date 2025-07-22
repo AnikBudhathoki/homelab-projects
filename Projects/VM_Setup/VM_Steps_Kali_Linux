@@ -1,0 +1,44 @@
+# Kali Linux Prebuilt VM Setup on VirtualBox
+
+## Objective
+Set up a Kali Linux prebuilt virtual machine using VirtualBox
+
+## Tools Used
+- Oracle VM VirtualBox
+- Kali Linux prebuilt VM image from the official Kali website
+- Host machine running Windows/Linux/macOS
+
+## Steps
+
+1. **Download and Install VirtualBox**  
+   Download the latest version of VirtualBox from (https://www.virtualbox.org/) and install it on your host machine
+
+2. **Download Kali Linux Prebuilt VM Image**  
+   Download the official Kali Linux file from the Kali Linux website:  
+(https://www.kali.org/get-kali/#kali-virtual-machines)
+    After downloading this folder, make sure you have a file extractor such as 7zip or WinRAR to extract the files
+    
+
+3. **Open File and Run the file ending in the extenstion .vbox **  
+
+4. **Start the Kali Linux VM**        
+    -After Running the .vbox file, your virutal machine should automatically install the configurations for Kali Linux
+   - Power on the VM and log in with the default credentials:  
+     - Username: `kali`  
+     - Password: `kali`  
+
+6. **Update Kali Linux**  
+   - Open a terminal and run:  
+     ```bash
+     sudo apt update && sudo apt upgrade -y
+     ```  
+   - Reboot if necessary.
+
+## Challenges & Notes
+- Ensure the internal network is correctly set up to allow communication with other VMs (like your Windows VM).  
+- Using the prebuilt VM speeds up lab setup, avoiding manual installation.
+
+## What I Learned
+- How to import and configure prebuilt VM images in VirtualBox.  
+- Basic Kali Linux usage and security best practices (like changing default credentials).  
+- Network configuration to integrate Kali with other lab machines.
