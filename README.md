@@ -6,11 +6,6 @@ Welcome to my Home Lab Projects repository! This is where I document my hands-on
 - Installed and configured Windows 10 and Kali Linux on **VirtualBox**
 - Created a secure **internal network** for isolated communication between VMs
 
-### 🔹 Offensive Security (Red Team)
-- Created a custom payload using `msfvenom` on Kali Linux
-- Executed the payload on Windows via Metasploit (`msfconsole`)
-- Simulated attacker behavior to generate meaningful telemetry
-
 ### 🔹 Defensive Security (Blue Team)
 - Installed and configured Sysmon on the Windows VM for system event logging
 - Set up Splunk to collect and visualize logs
