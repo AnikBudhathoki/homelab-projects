@@ -17,18 +17,14 @@ Set up a Windows 10 virtual machine using VirtualBox as part of my home lab envi
 
 3. **Create a New Virtual Machine**  
    - Open VirtualBox and click **New**.  
-   - Name the VM (e.g., `Windows 10 Lab`) and select the OS type/version.  
-   - Allocate memory (RAM) — recommend at least 4GB for smooth performance.  
-   - Create a virtual hard disk (VDI, dynamically allocated, size ~50GB).
+   - Name the VM and select the OS type/version.  
+   - Allocate memory (RAM), use at least 2-4gbs depending on your host machine
+   - Create a virtual hard disk [I used 75gbs]
 
-4. **Configure VM Settings**  
-   - Under **Storage**, mount the Windows 10 ISO to the virtual optical drive.  
-   - Configure **Network** settings to use an internal network (for lab isolation).  
-   - Adjust CPU cores if desired.
-
-5. **Start the VM and Install Windows 10**  
+4. **Start the VM and Install Windows 10**  
    - Boot the VM and follow the Windows installation wizard.  
    - Set up Windows username, password, and preferences.
 
 6. **Install VirtualBox Guest Additions**  
    - After installation, install Guest Additions for better integration (shared clipboard, better display).
+   - Make sure to hit resize guest window to resize the window to your host screen
