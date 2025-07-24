@@ -1,1 +1,34 @@
+1) index=* sourcetype="DNS Logs"
 
+  - indexes for events with the sourcetype labeled "DNS Logs", typically retrieving DNS-related log data
+
+2) index=* sourcetype="DNS Logs"
+| table source fqdn dst_ip source_ip
+
+  - searches all indexes for DNS log events and displays a table showing the log source, queried domain (fqdn), destination IP, and source IP for each event
+
+3) index=* sourcetype="DNS Logs"
+| top fqdn limit=10
+
+  - Shows the top 10 fully qualified domain names being queried
+
+4) index=* sourcetype="DNS Logs"
+| rare fqdn limit=10
+
+  - rarely queried domains, which could be indicators of malware or C2 comms
+
+5) index=* sourcetype="DNS Logs"
+| stats count by source_ip fqdn
+| sort -count
+
+  - how many times each source IP queried specific domains
+
+6) index=* sourcetype="DNS Logs"
+| stats count by source_ip fqdn
+| sort -count
+| table source_ip fqdn count
+
+  - a table of source IPs and the domains they queried, sorted by how frequently they did so
+
+
+  
