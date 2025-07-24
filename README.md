@@ -8,7 +8,9 @@ Welcome to my Home Lab Projects repository! This is where I document my hands-on
 
 ### 🔹 Defensive Security (Blue Team)
 - Installed and configured Sysmon on the Windows VM for system event logging
-- Set up Splunk to collect and visualize logs
+- Set up Splunk to collect and visualize logs [DNS/HTTP]
+- Uploaded, parsed, and normalized sample data to produce interesting fields to create clean logs for analysis
+- Preformed mutliple queries based on log data to find anomlies, top results, relevant fields, etc
 
   
 ## Tools & Technologies
