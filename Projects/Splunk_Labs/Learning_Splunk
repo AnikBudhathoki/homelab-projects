@@ -52,7 +52,9 @@ Knowledge Objects: Saved searches, reports, lookups, and field extractions that 
 
 1) DNS Log Analysis
     - Using Sample data from @0xrajneesh github, I downloaded DNS logs file to use/practice on my own Splunk instance
-    - Upon uploading data, I preformed log aggregaition and normalization of data using 
+    - Upon uploading data, I preformed log aggregation and normalization of data using the "Extract Interesting Fields" feature on Splunk.
+    - I extracted/parsed data such as destination port, source ip, source port, destination ip, domain name (FQDN), type of record, etc.
+    - 
 
 
 ##Challenges and Lessons Learned
