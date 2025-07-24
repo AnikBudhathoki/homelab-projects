@@ -1,1 +1,71 @@
+# Learning Splunk: A Personal Learning Journey
 
+I wanted to learn and create this github folder to document my journey of an individual learning Splunk.
+The purpose of this repository is to consolidate knowledge, track learning progress, and share useful resources, examples, and insights gained throughout the process.
+
+---
+
+##Installation
+
+To start learning Splunk, I first downloaded Splunk on my windows machine VM. I installed the Splunk enterprise free version which consists of Splunk access for 60 days.
+I used my college credentials to be able to access this. 
+
+## 🧠 Objectives
+
+The key objectives of this learning journey are:
+
+- Understand the architecture and core components of Splunk
+- Learn how to install and configure Splunk on different environments
+- Gain hands-on experience with indexing, searching, and visualizing data
+- Explore Splunk Search Processing Language (SPL)
+- Build dashboards, alerts, and reports
+- Learn how to forward data from remote machines
+- Understand common use cases for Splunk in IT operations, security, and DevOps
+
+---
+
+## 📘 Key Splunk Terms
+
+Before I start collecting, uploading, and working with data in Splunk, I first had to learn key terms in splunk. Below are a couple of terms that I learned and took notes on.
+
+
+
+Indexer: Processes incoming data and indexes it for search.
+
+Search Head: Allows users to perform searches and create visualizations.
+
+Forwarder: Sends data to indexers; typically runs on source machines.
+
+SPL (Search Processing Language): Splunk's query language for searching and analyzing data.
+
+Dashboard: A collection of panels and visualizations for monitoring data.
+
+Alert: Triggers actions (e.g., email, script) based on search results.
+
+Field Extraction: Pulls specific values from unstructured data.
+
+Source Type: Identifies the format of incoming data.
+
+Knowledge Objects: Saved searches, reports, lookups, and field extractions that enhance search.
+
+##Challenges and Lessons Learned
+
+* Understanding the Architecture
+Challenge: Initially, distinguishing between components like the indexer, search head, and forwarder was confusing—especially how they communicate and scale.
+
+Lesson Learned: Taking time to diagram the architecture and experiment with standalone vs. distributed setups helped solidify how data flows through Splunk. Visual learning was key.
+
+* Data Onboarding Issues
+Challenge: Ingesting log files wasn’t always straightforward—especially when dealing with custom formats or timestamps.
+
+Lesson Learned: Learning how to configure source types, perform field extractions, and use props.conf and transforms.conf taught the importance of data normalization and structure.
+
+* Writing SPL Queries
+Challenge: The SPL syntax initially felt overwhelming, especially when chaining commands or using functions like eval, stats, and rex.
+
+Lesson Learned: Practice made a huge difference. Starting with simple searches and gradually layering commands built both confidence and capability. Reading queries written by others was also incredibly helpful.
+
+* Building Dashboards
+Challenge: Creating meaningful dashboards required not just technical know-how, but also an understanding of what metrics mattered.
+
+Lesson Learned: Developing dashboards is as much about storytelling as it is about data. Learning to align dashboards with use cases—such as monitoring server uptime or application errors—made them far more useful.
